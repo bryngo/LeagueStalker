@@ -19,12 +19,21 @@ class Main {
 
         Summoner summoner = RiotAPI.getSummonerByName(summonerName);
         CurrentGame currentGame = summoner.getCurrentGame();
-        List<League> rankedStats;
         List<Participant> participants = currentGame.getParticipants();
 
+        final List<League> leagues;
+        List<League> leaguesBySummonerName;
+
+        String tier, champ;
+
+
         for(int i = 0; i < 10; i++) {
-            System.out.println("=== " + participants.get(i).getSummonerName() + " ===");
-            rankedStats = RiotAPI.getSummonerByID(participants.get(i).getSummonerID()).getLeagues();
+            leaguesBySummonerName = RiotAPI.getLeaguesBySummonerName(participants.get(i).getSummonerName());
+            champ = participants.get(i).getChampion().getName();
+            tier = leaguesBySummonerName.get(0).getTier().toString();
+
+            System.out.println(participants.get(i).getSummonerName() + " ( " + tier + " )" + " as " + champ );
+
         }
 
     }
