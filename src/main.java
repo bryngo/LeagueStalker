@@ -10,9 +10,12 @@ import java.util.List;
 class Main {
     public static void main(String[] args) {
 
+        String APIKEY = "";
+        String summonerName = "";
+
+
         RiotAPI.setRegion(Region.NA);
-        RiotAPI.setAPIKey("cda032a8-f14b-437d-a16d-e3941668ba5f");
-        String summonerName = "Prince Turtle";
+        RiotAPI.setAPIKey(APIKEY);
 
         Summoner summoner = RiotAPI.getSummonerByName(summonerName);
         CurrentGame currentGame = summoner.getCurrentGame();
