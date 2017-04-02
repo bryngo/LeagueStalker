@@ -10,8 +10,8 @@ import java.util.List;
 class Main {
     public static void main(String[] args) {
 
-        String APIKEY = "";
-        String summonerName = "";
+        String APIKEY = "cda032a8-f14b-437d-a16d-e3941668ba5f";
+        String summonerName = "Lunoski";
 
 
         RiotAPI.setRegion(Region.NA);
@@ -33,7 +33,6 @@ class Main {
             tier = leaguesBySummonerName.get(0).getTier().toString();
 
             System.out.println(participants.get(i).getSummonerName() + " ( " + tier + " )" + " as " + champ );
-
         }
 
     }
