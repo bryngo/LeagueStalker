@@ -19,7 +19,6 @@ class Main {
 
         RiotAPI.setRegion(Region.NA);
         RiotAPI.setAPIKey(APIKEY);
-
         Summoner summoner = RiotAPI.getSummonerByName(summonerName);
         CurrentGame currentGame = summoner.getCurrentGame();
         List<Participant> participants = currentGame.getParticipants();
@@ -77,5 +76,3 @@ class Main {
     }
 
 } // returns an APIKey.
-
-}
